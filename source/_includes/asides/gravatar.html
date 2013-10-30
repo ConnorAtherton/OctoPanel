@@ -1,0 +1,7 @@
+{% if site.gravatar_email %}
+<section>
+        <span>
+                <img src="{% gravatar_image %}" alt="Gravatar of {{ site.author}} " title="Gravatar of {{ site.author }}" />
+        </span>
+</section>
+{% endif %}

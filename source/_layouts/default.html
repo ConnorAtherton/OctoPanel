@@ -1,0 +1,29 @@
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head.html %}
+
+<body>
+	<div class="container">
+		<aside class="left">
+			<div class="inner-left">
+				<header>
+					{% include header.html %}
+				</header>
+				<footer>
+					{% include custom/asidefooter.html %}
+				</footer>
+			</div>
+		</aside>
+    	<section class="right">
+    		<div class="inner-right">
+    			<div id="posts">
+    			  	{{ content | expand_urls: root_url }}
+    			</div>
+    			<footer id="footer">
+    				{% include footer.html %}
+    			</footer>
+    			{% include after_footer.html %}
+    		</div>
+    	</section>
+  	</div>
+</body>
+</html>

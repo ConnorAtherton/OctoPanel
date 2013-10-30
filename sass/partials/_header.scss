@@ -1,0 +1,42 @@
+@import "../custom/buttons";
+
+.inner-left {
+	> header {
+		width: 90%;
+		margin: 100px auto 0 auto;
+		text-align: center;
+		a {
+			font-size: 30px;
+			color: $button-fill;
+		}
+		> h1, h2 {
+			letter-spacing: -2px;
+			font-weight: 200;
+		}
+		@media only screen and (max-width: 850px) {
+			margin: 25px auto 0 auto;
+		}
+		> .profilepic {
+			border-radius: 300px;
+			width: 120px;
+			height: auto;
+			@media only screen and (max-width: 850px) {
+				width: 80px;
+			}
+		}
+	}
+	> footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		@media only screen and (max-width: 850px) {
+			width: 100%;
+		}
+		a {
+			min-width: 100px;
+		}
+	}
+}

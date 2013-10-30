@@ -1,0 +1,22 @@
+.btn {
+	padding: .4em .75em;
+	text-decoration: none;
+	border-radius: 3px;
+	margin: .5em .25em .5em;
+	line-height: 1.5em;
+	display: inline-block;
+	cursor: pointer;
+	background: white;
+}
+
+.btn-blue {
+	color: hsl(0, 0%, 47%);
+	border: 1px solid hsl(0, 0%, 87%);
+
+	&:hover {
+		color: hsl(0, 100%, 100%);
+		background: hsl(206, 90%, 66%);
+		border: 1px solid hsl(206, 72%, 48%);
+		text-decoration: none;
+	}
+}

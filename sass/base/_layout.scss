@@ -1,0 +1,204 @@
+$max-width: 100% !default;
+
+// Padding used for layout margins
+$pad-min: 18px !default;
+$pad-narrow: 25px !default;
+$pad-medium: 35px !default;
+$pad-wide: 55px !default;
+
+// Sidebar widths used in media queries
+$sidebar-width-medium: 240px !default;
+$sidebar-pad-medium: 15px !default;
+$sidebar-pad-wide: 20px !default;
+$sidebar-width-wide: 300px !default;
+
+$indented-lists: false !default;
+
+$header-font-size: 1em !default;
+$header-padding-top: 1.5em !default;
+$header-padding-bottom: 1.5em !default;
+
+.group { @include pie-clearfix; }
+
+body {
+  -webkit-text-size-adjust: none;
+  min-width: $max-width;
+  min-height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  > header, > nav, > footer, #content > article, #content > div > article, #content > div > section {
+    @extend .group;
+    padding-left: $pad-min;
+    padding-right: $pad-min;
+    @media only screen and (min-width: 480px) {
+      padding-left: $pad-narrow;
+      padding-right: $pad-narrow;
+    }
+    @media only screen and (min-width: 768px) {
+      padding-left: $pad-medium;
+      padding-right: $pad-medium;
+    }
+    @media only screen and (min-width: 992px) {
+      padding-left: $pad-wide;
+      padding-right: $pad-wide;
+    }
+  }
+  div.pagination {
+    @extend .group;
+    margin-left: $pad-min;
+    margin-right: $pad-min;
+    @media only screen and (min-width: 480px) {
+      margin-left: $pad-narrow;
+      margin-right: $pad-narrow;
+    }
+    @media only screen and (min-width: 768px) {
+      margin-left: $pad-medium;
+      margin-right: $pad-medium;
+    }
+    @media only screen and (min-width: 992px) {
+      margin-left: $pad-wide;
+      margin-right: $pad-wide;
+    }
+  }
+  > header {
+    font-size: $header-font-size;
+    padding-top: $header-padding-top;
+    padding-bottom: $header-padding-bottom;
+  }
+}
+
+html{
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+
+body > .container {
+ height: 100%;
+ overflow: hidden;
+  background-color: hsl(0, 100%, 100%);
+  -webkit-overflow-scrolling: touch;
+}
+
+.left {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  max-width: 500px;
+  background-color: $left-background-color;
+  // background-image: $left-background-image;
+  > .inner-left {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, 0.3);
+    -moz-box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
+    box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, 0.3);
+  }
+}
+
+.right {
+  box-sizing: content-box;
+  outline: 0;
+  position: absolute;
+  left: 30%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: hsl(0, 100%, 100%);
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  > .inner-right {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 900px;
+    padding: 100px 85px;
+  }
+}
+
+// #content {
+//   overflow: auto;
+//   > div, > article { width: 100%; }
+// }
+
+aside.sidebar {
+  float: none;
+  padding: 0 $pad-min 1px;
+  background-color: lighten($sidebar-bg, 2);
+  border-top: 1px solid $sidebar-border;
+  @extend .group;
+}
+
+.flex-content { max-width: 100%; height: auto; }
+
+article .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+article .video-container iframe, 
+article .video-container object,
+ article .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.basic-alignment {
+  &.left { float: left; margin-right: 1.5em; }
+  &.right { float: right; margin-left: 1.5em; }
+  &.center { display:block; margin: 0 auto 1.5em; }
+  &.left, &.right { margin-bottom: .8em; }
+}
+
+@media only screen and (max-width: 850px) {
+
+  .left {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    -webkit-box-shadow: inset 0 0 -3px hsla(0, 0%, 0%, 0.9);
+    -moz-box-shadow: inset 0 0 -3px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 -3px  hsla(0, 0%, 0%, 0.9);
+    max-width: 100%;
+  }
+
+  .right {
+    box-sizing: border-box;
+    position: relative;
+    padding: 5%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    > .inner-right {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+}
+
+a {
+  color: $font-color;
+  :hover {}
+  :visited { color: $font-color; }
+  :active {}
+}
+
