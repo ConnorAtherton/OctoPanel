@@ -61,11 +61,6 @@ body {
       margin-right: $pad-wide;
     }
   }
-  > header {
-    font-size: $header-font-size;
-    padding-top: $header-padding-top;
-    padding-bottom: $header-padding-bottom;
-  }
 }
 
 html{
@@ -91,12 +86,16 @@ body > .container {
   width: 30%;
   height: 100%;
   max-width: 500px;
-  background-color: $left-background-color;
-  // background-image: $left-background-image;
+  @if $image == true {
+    background: $left-background-image !important;
+    border-right: 1px solid darken($base02, 5) !important;
+  } @else {
+    background-color: $left-background-color;
+  }
   > .inner-left {
     position: absolute;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     top: 0;
     left: 0;
     -webkit-box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, 0.3);
@@ -124,19 +123,6 @@ body > .container {
     max-width: 900px;
     padding: 100px 85px;
   }
-}
-
-// #content {
-//   overflow: auto;
-//   > div, > article { width: 100%; }
-// }
-
-aside.sidebar {
-  float: none;
-  padding: 0 $pad-min 1px;
-  background-color: lighten($sidebar-bg, 2);
-  border-top: 1px solid $sidebar-border;
-  @extend .group;
 }
 
 .flex-content { max-width: 100%; height: auto; }
@@ -172,12 +158,20 @@ article .video-container object,
   .left {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: auto;
+    min-height: 300px;
     -webkit-box-shadow: inset 0 0 -3px hsla(0, 0%, 0%, 0.9);
     -moz-box-shadow: inset 0 0 -3px rgba(0,0,0,0.3);
     box-shadow: inset 0 0 -3px  hsla(0, 0%, 0%, 0.9);
     max-width: 100%;
+    .subtitle {
+      display: none;
+    }
+    @media only screen and (max-width: 300px) { 
+      min-height: 350px;
+    }
   }
+
 
   .right {
     box-sizing: border-box;

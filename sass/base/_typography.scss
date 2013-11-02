@@ -10,14 +10,6 @@ $header-subtitle-font-family: $heading-font-family !default;
 .serif { font-family: $serif; }
 .mono { font-family: $mono; }
 
-body > header h1 {
-  font-size: 2.2em;
-  font-weight: 200;
-  line-height: 1.2em;
-  margin-bottom: 0.6667em;
-  letter-spacing: -2px;
-  @extend .serif;
-}
 
 body {
   line-height: 1.5em;
@@ -164,5 +156,6 @@ a {
 
 h1, h2, h3, h4, h5 , h6 {
   font-weight: normal;
+  @extend .serif;
 }
 

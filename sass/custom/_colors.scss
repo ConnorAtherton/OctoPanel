@@ -3,23 +3,19 @@
 // If you need a handy color picker try http://hslpicker.com
 
 $header-bg: #333;
-$left-background-color: hsl(0, 0%, 93%);
-// $left-background-image: image-url('bright_squares.png');
+$left-background-color: hsl(0, 0%, 16%);
+
+// Change this if you want to use a background image
+$image: false !default;
+$left-background-image: image-url('bright_squares.png');
 
 $subtitle-color: lighten($header-bg, 58);
-$nav-bg: desaturate(lighten(#8fc17a, 18), 5);
-$nav-bg-front: image-url('noise.png');
-$nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
-$sidebar-bg: desaturate(#eceff5, 8);
-$sidebar-link-color: saturate(#526f9a, 10);
-$sidebar-link-color-hover: darken(#7ab662, 9);
-$footer-bg: #ccc !default;
-$footer-bg-front: image-url('noise.png');
-$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
-
+$link-color-hover: #343434;
+$text-color-light: #343434;
+$text-color: #343434;
 
 /* To use the light Solarized highlighting theme uncomment the following line */
-$solarized: light;
+// $solarized: light;
 
 /* If you want to tweak the Solarized colors you can do that here */
 $base03:          #002b36; //darkest blue
@@ -42,9 +38,18 @@ $white: 		  #ffffff;
 $code-bg: 		  hsl(0, 0%, 87%);
 
 /* Button colors */
-$button-fill: 	  hsl(206, 90%, 66%);
-$button-border:   hsl(206, 72%, 48%);	 
+// light
+$button-light-color: 	    hsl(206, 90%, 66%);
+$button-light-border:       $code-bg;	
+$button-light-hover-fill:   hsl(206, 90%, 66%);
+$button-light-hover-border: hsl(206, 72%, 48%);
+$button-light-fill: $white;
 
+// dark
+$button-dark-color:         hsl(0, 0%, 47%);
+$button-dark-border:        hsl(0, 0%, 27%);
+$button-dark-hover-fill:    hsl(206, 90%, 66%);
+$button-dark-hover-border:  hsl(206, 72%, 48%);
 
 /* Non highlighted code colors */
 $pre-bg: $base03;

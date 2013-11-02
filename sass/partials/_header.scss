@@ -7,11 +7,22 @@
 		text-align: center;
 		a {
 			font-size: 30px;
-			color: $button-fill;
+			color: $white;
+			@extend .serif;
+			font-weight: 100;
 		}
-		> h1, h2 {
-			letter-spacing: -2px;
-			font-weight: 200;
+		h1, h2 {
+			@extend .serif;
+		}
+		h1 {
+			letter-spacing: -1px;
+			text-transform: uppercase;
+			// margin-bottom: 10px;
+		}
+		h2 {
+			font-size: 0.9em;
+			color: $button-dark-color;
+			bottom: 20px;
 		}
 		@media only screen and (max-width: 850px) {
 			margin: 25px auto 0 auto;
@@ -34,6 +45,7 @@
 		text-align: center;
 		@media only screen and (max-width: 850px) {
 			width: 100%;
+			position: relative;
 		}
 		a {
 			min-width: 100px;
