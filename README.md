@@ -9,7 +9,14 @@ Please create an issue on Github if you have any problems or requests for the th
 
 Open your terminal and type
 
-	$ cd octopress-blog
-	$ git clone git://github.com/ConnorAtherton/OctoPanel.git .themes/OctoPanel
-	$ rake install['OctoPanel']
-	$ rake generate
+1. `$ cd octopress-blog`
+2. `$ git clone git://github.com/ConnorAtherton/OctoPanel.git .themes/OctoPanel`
+3. Update your `_config.yml` file to include a `gravatar_email` variable.
+
+	``` 
+	# Gravatar  
+	gravatar_email: youraddress@example.com
+	```
+
+4. `$ rake install['OctoPanel']`
+5. `$ rake generate`
