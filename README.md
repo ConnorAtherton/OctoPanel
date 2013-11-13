@@ -11,12 +11,13 @@ Open your terminal and type
 
 1. `$ cd octopress-blog`
 2. `$ git clone git://github.com/ConnorAtherton/OctoPanel.git .themes/OctoPanel`
-3. Update your `_config.yml` file to include a `gravatar_email` variable.
+3. Copy 'gravatar.rb' to your 'plugins' directory.
+4. Update your `_config.yml` file to include a `gravatar_email` variable.
 
 	``` 
 	# Gravatar  
 	gravatar_email: youraddress@example.com
 	```
 
-4. `$ rake install['OctoPanel']`
-5. `$ rake generate`
+5. `$ rake install['OctoPanel']`
+6. `$ rake generate`
