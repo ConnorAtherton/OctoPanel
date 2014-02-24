@@ -19,6 +19,7 @@ Open your terminal and type
 	```
 	# Gravatar
 	gravatar_email: youraddress@example.com
+  gravatar_header: true
 	```
 
 5. `$ rake install['OctoPanel']`
